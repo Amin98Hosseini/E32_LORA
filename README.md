@@ -9,4 +9,4 @@ this module have 4 mode .
 4- sleep mode (mode 3) : in sleep mode receiving parameter setting command  is on.
 
 
-copr right 2020 reserved with elecomp_tech
+copy right 2020 reserved with elecomp_tech
