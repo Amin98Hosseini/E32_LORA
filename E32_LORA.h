@@ -14,3 +14,6 @@ void puts_str(char *str);
 void E32_Mode(int a);
 void E32_Send(char *Data);
 void E32_Recive(char *Data);
+void E32_Reset();
+void E32_Version(char *Data);
+void E32_Op(char *Data);
