@@ -61,3 +61,38 @@ void E32_Recive(char *Data)
 		HAL_UART_Receive_IT(&huart1,(unsigned char*)&Data,100);
 	}
 }
+
+//Reset E32 (This Function Reset All Config Module)
+void E32_Reset()	
+{
+	E32_Mode(3);
+	puts_str((char*)0xc4);
+	puts_str((char*)0xc4);
+	puts_str((char*)0xc4);
+	HAL_Delay(10);
+	E32_Mode(0);
+}
+
+//Get E32 Version Number 
+void E32_Version(char *Data)
+{
+	E32_Mode(3);
+	puts_str((char*)0xc3);
+	puts_str((char*)0xc3);
+	puts_str((char*)0xc3);
+	HAL_UART_Receive_IT(&huart1,(unsigned char*)Data,1);
+	HAL_Delay(10);
+	E32_Mode(0);
+}
+
+// Module Return The present Configuration Parameters
+void E32_Op(char *Data)
+{
+	E32_Mode(3);
+	puts_str((char*)0xc1);
+	puts_str((char*)0xc1);
+	puts_str((char*)0xc1);
+	HAL_UART_Receive_IT(&huart1,(unsigned char*)Data,1);
+	HAL_Delay(10);
+	E32_Mode(0);
+}
